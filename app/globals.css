@@ -1,26 +1,56 @@
+@layer base, utils, components;
+
+@import '@webtui/css/base.css';
+@import '@webtui/css/utils/box.css';
+@import '@webtui/css/components/typography.css';
 @import "tailwindcss";
+@import '@webtui/plugin-nf';
+@import '@webtui/theme-everforest';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --font-family: Geist-mono, monospace, "Symbols Nerd Font";
   }
 }
+@layer utils {
+    [box-~='square'],
+    [box-~='round'],
+    [box-~='double'] {
 
+    }
+}
+
+* {
+  box-sizing: border-box;
+}
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  width: 100vw;
+}
+main {
+  width: 100%;
+  height: 100%;
+}
+nav {
+  display: flex;
+  gap: 3ch;
+}
+a {
+    color: var(--fg);
+}
+
+span {
+  background-color: var(--background0);
+  color: var(--gray0);
+  padding: 0 1ch;
+}
+
+#sidebar {
+    flex-grow: 1;
+}
+.content {
+    margin: 0 1ch;
+    flex-grow: 1;
 }

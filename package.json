@@ -9,7 +9,11 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@webtui/css": "^0.1.10",
+    "@webtui/plugin-nf": "^0.1.2",
+    "@webtui/theme-everforest": "^0.0.5",
     "next": "16.3.3",
+    "node": "^26.7.0",
     "react": "19.2.8",
     "react-dom": "19.2.8"
   },
