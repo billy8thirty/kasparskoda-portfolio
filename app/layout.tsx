@@ -27,6 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       data-webtui-theme="everforest-dark-medium"
     >
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="apple-mobile-web-app-title" content="MyWebSite" />
       </head>
       <body className="min-h-full flex flex-col">

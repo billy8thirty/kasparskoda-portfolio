@@ -3,6 +3,7 @@
 @import '@webtui/css/base.css';
 @import '@webtui/css/utils/box.css';
 @import '@webtui/css/components/typography.css';
+@import '@webtui/css/components/view.css';
 @import "tailwindcss";
 @import '@webtui/plugin-nf';
 @import '@webtui/theme-everforest';
@@ -17,6 +18,9 @@
     [box-~='round'],
     [box-~='double'] {
 
+    }
+    .grayed-out {
+        --box-border-color: var(--gray0);
     }
 }
 
@@ -51,6 +55,6 @@ span {
     flex-grow: 1;
 }
 .content {
-    margin: 0 1ch;
+    padding: 0 1ch;
     flex-grow: 1;
 }

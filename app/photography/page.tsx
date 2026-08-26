@@ -24,8 +24,8 @@ export default function photography() {
           buttonText="select"
           summary="This is a summary of the automotive 3D-Design. i wonder what i designed, this one is longer" />
       </Sidebar>
-      <div className="content flex flex-grow justify-center items-center">
-        <p>Select something...</p>
+      <div box-="round" className="sm:flex hidden grayed-out content flex flex-grow justify-center items-center text-nowrap">
+        <p className='px-[1ch]'>Select something...</p>
       </div>
     </main>
   )
