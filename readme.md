@@ -5,3 +5,4 @@ this project uses:
 * TailwindCSS
 * WebTUI
 * Nerdfonts
+* Lucide
