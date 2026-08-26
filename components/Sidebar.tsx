@@ -1,9 +1,9 @@
-export default function Sidebar() {
+export default function Sidebar({ title, children }) {
   return (
-    <div box-="round" shear-="top" className="w-[40ch] h-full">
-      <div><span>Sidebar</span></div>
+    <div box-="round" shear-="top" className="h-full">
+      <div><span>{title}</span></div>
       <div className="content">
-        <p>Sidebar Content...</p>
+        {children}
       </div>
     </div>
   );

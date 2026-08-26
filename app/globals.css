@@ -9,7 +9,7 @@
 
 @layer base {
   :root {
-    --font-family: Geist-mono, monospace, "Symbols Nerd Font";
+    --font-family: var(--font-geist-mono), "Symbols Nerd Font";
   }
 }
 @layer utils {
