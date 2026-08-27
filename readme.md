@@ -6,3 +6,5 @@ this project uses:
 * WebTUI
 * Nerdfonts
 * Lucide
+
+Brand icons are sourced from simple-icons
