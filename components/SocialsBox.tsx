@@ -1,23 +1,18 @@
-import Link from "next/link";
-import Icon from "@/components/icon.tsx";
+import Icon from "@/components/icon";
+import type { Social } from "@/lib/post-types";
 
-
-export default function SideBarElement({ title, iconPath, handle, link, buttonText}) {
+export default function SocialsBox({ social }: { social: Social }) {
   return (
-    <a box-="round" shear-="both" href={link} target="_blank" className="text-nowrap w-full sm:max-w-[50ch] flex flex-col gap-[1ch]">
+    <a box-="round" shear-="both" href={social.link} target="_blank" rel="noreferrer" className="text-nowrap w-full sm:max-w-[50ch] flex flex-col gap-[1ch]">
       <div className="text-start flex justify-between">
         <span className="flex flex-row gap-[1ch] justify-between">
-          <Icon src={iconPath} className="text-[var(--fg)]" />
+          {social.icon && <Icon src={social.icon} className="text-[var(--fg)]" />}
         </span>
-        <span>
-          {title}
-        </span>
+        <span>{social.title}</span>
       </div>
-      <div className="px-[1ch] text-center">
-        {buttonText}
-      </div>
+      <div className="px-[1ch] text-center">{social.buttonText}</div>
       <div className="flex justify-center px-[1ch]">
-        <span>{handle}</span>
+        <span>{social.handle}</span>
       </div>
     </a>
   );

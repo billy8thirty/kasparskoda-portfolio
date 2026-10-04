@@ -1,28 +1,19 @@
-export default function AboutMe() {
+import { markdownToHtml } from "@/lib/render";
+import type { About } from "@/lib/post-types";
+
+export default function AboutMe({ about }: { about: About }) {
   return (
     <div box-="round" shear-="top" className="w-full flex flex-col">
       <div><span>About me</span></div>
-      <div className="content w-full flex flex-col gap-[3ch]">
+      <div className="content w-full flex flex-col gap-[3ch] overflow-y-auto">
+        <h3 className="mt-[1ch]">{about.heading}</h3>
 
-        <div className="flex flex-row items-center">
-          <p>
-
-          </p>
-        </div>
-        <h3 className="mt-[1ch]">I'm Kaspar</h3>
-
-        <p className="text-pretty mr-[5ch] max-w-[50ch]">
-          an aspiring maker and videographer, with knowledge and experience in many fields across film making,
-          photography, web development, and more.
-        </p>
-
-        <sub className="text-pretty mr-[5ch]">I got plenty of passion and want to make my little corner of the world a better place.</sub>
+        <div className="md text-pretty mr-[5ch] max-w-[60ch]" dangerouslySetInnerHTML={{ __html: markdownToHtml(about.body) }} />
 
         <div className="flex flex-col">
-          <em>location.......Essen, Germany</em>
-          <em>Available......<strong>Available to Work</strong></em>
+          <em>location.......{about.location}</em>
+          <em>Available......<strong>{about.availability}</strong></em>
         </div>
-
       </div>
     </div>
   );
