@@ -1,42 +1,23 @@
+import { connection } from "next/server";
 import AboutMe from "@/components/AboutMe";
 import Sidebar from "@/components/Sidebar";
 import SocialsBox from "@/components/SocialsBox";
+import { getAbout, getSocials } from "@/lib/site";
 
-const home = () => {
+const home = async () => {
+  // Content is edited at runtime via /admin, so always read it fresh.
+  await connection();
+  const [about, socials] = await Promise.all([getAbout(), getSocials()]);
+
   return (
     <main className="flex flex-col">
-      <div className="flex flex-row w-full">
+      <div className="flex flex-row w-full flex-1 min-h-0">
         <Sidebar title="socials">
-          <SocialsBox
-            title="Instagram"
-            iconPath={"/icons/instagram.svg"}
-            buttonText="view profile"
-            link="https://www.instagram.com/billy8thirty/"
-            handle="@billy8thirty"
-          />
-          <SocialsBox
-            title="GitHub"
-            iconPath={"/icons/github.svg"}
-            buttonText="view profile"
-            link="https://www.github.com/billy8thirty/"
-            handle="@billy8thirty"
-          />
-          <SocialsBox
-            title="Mail"
-            iconPath={"/icons/protonmail.svg"}
-            buttonText="Write me an e-mail!"
-            link="mailto:kasparskoda@proton.me"
-            handle="kasparskoda@proton.me"
-          />
-          <SocialsBox
-            title="LinkedIn"
-            iconPath={"/icons/user-round.svg"}
-            buttonText="view my CV"
-            link="https://www.linkedin.com/in/kasparskoda/"
-            handle="Kaspar Skoda"
-          />
+          {socials.map((social) => (
+            <SocialsBox key={social.id} social={social} />
+          ))}
         </Sidebar>
-        <AboutMe />
+        <AboutMe about={about} />
       </div>
     </main>
   );

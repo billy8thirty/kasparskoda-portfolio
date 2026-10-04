@@ -1,0 +1,34 @@
+[
+  {
+    "id": "instagram",
+    "title": "Instagram",
+    "icon": "/icons/instagram.svg",
+    "buttonText": "view profile",
+    "link": "https://www.instagram.com/billy8thirty/",
+    "handle": "@billy8thirty"
+  },
+  {
+    "id": "github",
+    "title": "GitHub",
+    "icon": "/icons/github.svg",
+    "buttonText": "view profile",
+    "link": "https://www.github.com/billy8thirty/",
+    "handle": "@billy8thirty"
+  },
+  {
+    "id": "mail",
+    "title": "Mail",
+    "icon": "/icons/protonmail.svg",
+    "buttonText": "Write me an e-mail!",
+    "link": "mailto:kasparskoda@proton.me",
+    "handle": "kasparskoda@proton.me"
+  },
+  {
+    "id": "linkedin",
+    "title": "LinkedIn",
+    "icon": "/icons/user-round.svg",
+    "buttonText": "view my CV",
+    "link": "https://www.linkedin.com/in/kasparskoda/",
+    "handle": "Kaspar Skoda"
+  }
+]
